@@ -1,32 +1,30 @@
 import { useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { signInWithPopup } from 'firebase/auth';
-import { auth, Providers } from '../config/firebase';
+import { useAuth0 } from '@auth0/auth0-react';
 
 interface Props {
-  children: React.ReactNode;
+    children: React.ReactNode;
 }
 
 const AuthChecker = ({ children }: Props) => {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
+    const { isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
 
-  useEffect(() => {
-    if (!auth.currentUser) {
-      signInWithPopup(auth, Providers.google)
-        .then(() => {
-          navigate('/dashboard');
-        })
-        .catch(() => {
-          navigate('/'); // Assuming you have a login route
-        });
-    }
-  }, [navigate]);
+    useEffect(() => {
+        if (!isLoading && !isAuthenticated) {
+            loginWithRedirect();
+        }
+    }, [isLoading, isAuthenticated, loginWithRedirect]);
 
-  if (!auth.currentUser) {
-    return null; // Or a loading spinner
-  }
+    useEffect(() => {
+        if (!isLoading && isAuthenticated) {
+            navigate('/dashboard');
+        }
+    }, [isLoading, isAuthenticated, navigate]);
 
-  return <>{children}</>;
+    return (
+        <>{children}</>
+    );
 };
 
 export default AuthChecker;

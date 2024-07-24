@@ -46,7 +46,7 @@ function DataTable() {
       <div className="flex flex-row">
         <div>
           <button 
-            className="p-3 m-3 bg-red-400 rounded hover:bg-red-800 hover:text-black"
+            className="p-3 m-3 bg-blue-400 rounded hover:bg-red-800 hover:text-black"
             onClick={handleOpen}
           >
             Create New Car
@@ -54,13 +54,13 @@ function DataTable() {
         </div>
         <Button 
           onClick={handleOpen} 
-          className='p-3 m-3 bg-red-300 rounded hover:bg-slate-800 hover:text-black'
+          className='p-3 m-3 bg-blue-300 rounded hover:bg-slate-800 hover:text-black'
         >
           Update
         </Button>
         <Button 
           onClick={handleDelete} 
-          className='p-3 m-3 bg-red-300 rounded hover:bg-slate-800 hover:text-black'
+          className='p-3 m-3 bg-blue-300 rounded hover:bg-slate-800 hover:text-black'
         >
           Delete
         </Button>
@@ -68,7 +68,7 @@ function DataTable() {
       <div className={open ? "hidden" : "container mx-10 my-5 flex flex-col"}
         style={{ height: 400, width: '100%' }}
       >
-        <h2 className="p-3 bg-red-300 my-2 rounded">My Monsters</h2>
+        <h2 className="p-3 bg-blue-400 my-2 rounded">My Cars</h2>
         <DataGrid 
           rows={carData} 
           columns={columns}
