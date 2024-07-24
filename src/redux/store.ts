@@ -1,5 +1,3 @@
-// store is like a mini temportate in-the-middle database
-
 import { configureStore } from "@reduxjs/toolkit";
 import { reducer } from "./slices/RootSlice"
 
