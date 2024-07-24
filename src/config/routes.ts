@@ -12,11 +12,6 @@ const routes = [
     component: Dashboard,
     protected: true,
   },
-  {
-    path: '/login',
-    component: Login,
-    protected: false,
-  },
 ];
 
 export default routes;
