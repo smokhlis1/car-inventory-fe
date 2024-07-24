@@ -48,7 +48,7 @@ const CarForm = (props: CarFormProps) => {
           <Input {...register('model')} name="model" placeholder="Model"/>
         </div>
         <div>
-          <label htmlFor="weight">Year</label>
+          <label htmlFor="year">Year</label>
           <Input {...register('year')} name="year" placeholder="Year"/>
         </div>
         <div>
