@@ -56,7 +56,7 @@ const CarForm = (props: CarFormProps) => {
           <Input {...register('color')} name="color" placeholder="Color"/>
         </div>
         <div className="flex p-1">
-          <Button className="flex justify-start m-3 bg-red-400 p-2 rounded hover:bg-red-800 text-white">
+          <Button className="flex justify-start m-3 bg-blue-400 p-2 rounded hover:bg-red-800 text-white">
             Submit
           </Button>
         </div>

@@ -46,14 +46,14 @@ function Navbar() {
       {isVisible && (
         <div className="w-full block flex-grow items-center">
           <div className="text-sm lg:flex-grow">
-            <Button className="p-3 pt-1 m-5 bg-blue-400 justify-content hover:bg-black hover:text-red-500 content-center rounded" onClick={() => handleNavigation('/')}>
+            <Button className="p-3 pt-1 m-5 bg-blue-400 justify-content hover:bg-black hover:text-blue-500 content-center rounded" onClick={() => handleNavigation('/')}>
               Home
             </Button>
-            <Button className="p-3 pt-1 m-5 bg-blue-400 justify-content hover:bg-black hover:text-red-500 content-center rounded" onClick={() => handleNavigation('/about')}>
+            <Button className="p-3 pt-1 m-5 bg-blue-400 justify-content hover:bg-black hover:text-blue-500 content-center rounded" onClick={() => handleNavigation('/about')}>
               About
             </Button>
             {isAuthenticated && (
-            <Button className="p-3 pt-1 m-5 bg-blue-400 justify-content hover:bg-black hover:text-red-500 content-center rounded" onClick={() => handleNavigation('/dashboard')}>
+            <Button className="p-3 pt-1 m-5 bg-blue-400 justify-content hover:bg-black hover:text-blue-500 content-center rounded" onClick={() => handleNavigation('/dashboard')}>
               Dashboard
             </Button>
             )}
